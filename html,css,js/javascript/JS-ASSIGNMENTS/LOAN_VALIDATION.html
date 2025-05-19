@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function validloan(inputloan, selectloanList) {
+            let lengthofloan = selectloanList.length;
+            let option = new Option(inputloan.value, inputloan.value);
+
+            let messagelen = document.getElementById('oplen');
+            let message1 = document.getElementById('msg1');
+            let message2 = document.getElementById('msg2');
+
+            for (let i = 0; i < lengthofloan; i++) {
+                if (inputloan.value === selectloanList[i].value) {
+                    message1.innerHTML = `<font color="red">${inputloan.value} already exists</font>`;
+                    return;
+                }
+            }
+
+            
+            selectloanList[lengthofloan]=option;
+
+            
+            message1.innerHTML = `<font color="green">${inputloan.value} added successfully</font>`;
+            messagelen.innerHTML = `${selectloanList.length}`;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>ADD LOAN TYPE :</td>
+                <td>
+                    <input type="text" name="lt" id="lt">
+                </td>
+                <td>
+                    <input type="button" name="add" value="add" id="add" onclick="validloan(this.form.lt, this.form.loan)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    LOAN TYPE:
+                    <select name="loan" id="loan">
+                        <option value="HOME LOAN">HOME LOAN</option>
+                        <option value="CAR LOAN">CAR LOAN</option>
+                        <option value="EDUCATION LOAN">EDUCATION LOAN</option>
+                        <option value="PERSONAL LOAN">PERSONAL LOAN</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>LOAN TYPE NUMBER:</td>
+                <td><span id="oplen">4</span></td>
+            </tr>
+            <tr>
+                <td><div id="msg1"></div></td>
+            </tr>
+            <tr>
+                <td><div id="msg2"></div></td>
+            </tr>
+        </table>
+    </form>   
+</body>
+</html>

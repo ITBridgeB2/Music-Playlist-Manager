@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    function welcome(name,gender){
+        if (name==undefined) {
+         alert("name not given") 
+         return;  
+        }
+        if (gender==undefined) {
+         alert("gender not given")   
+         return;
+        }
+        if (gender == 'male') {
+          alert(`welcome mr${name}`)  
+        }
+        else{
+            alert(`welcome mrs${name}`)
+        }
+    }
+    </script>
+</head>
+<body>
+   <input type="button" value="click"onclick="welcome('mukthar','male')" >
+   <input type="button" value="click"onclick="welcome()" >
+   <input type="button" value="click"onclick="welcome('aysamma')" >
+   <input type="button" value="click"onclick="welcome('','')" >
+</body>
+</html>

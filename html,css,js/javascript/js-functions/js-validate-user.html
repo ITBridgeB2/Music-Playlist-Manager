@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    let usernames = ['tarun', 'rakesh', 'hammad', 'isha'];
+
+function validate(username, password) {
+    if (!username || !password) {
+        alert("Fields should be entered correctly");
+        return;
+    }
+    if (password.length < 8) {
+        alert("Password cannot be less than 8 characters");
+        return;
+    }
+    if (usernames.includes(username)) {
+        alert(`Welcome, Valid User`);
+    } else {
+        alert("Invalid User");
+    }
+}
+
+    </script>
+</head>
+<body>
+    <input type="button" value="ValidateUser1" onclick="validate()"> <br />
+
+    <input type="button" value="ValidateUser2" onclick="validate('tarun')"><br /> 
+
+ <input type="button" value="ValidateUser3" onclick="validate('tarun', 'hags121')"><br /> 
+
+<input type="button" value="ValidateUser4" onclick="validate('tarun', 'hags1211211')"><br />
+
+<input type="button" value="ValidateUser5" onclick="validate('jay', 'hags1211211')"><br /> 
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Apple</title>
+  <style>
+    body {
+      background-color: #f5f5dc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .apple {
+      width: 100px;
+      height: 120px;
+      background: rgb(224, 192, 8);
+      border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+      position: relative;
+      box-shadow: inset -5px -10px rgba(0, 0, 0, 0.2);
+    }
+
+    .apple::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 40px;
+      width: 10px;
+      height: 30px;
+      background: #4b2c20;
+      border-radius: 5px;
+    }
+
+    .leaf {
+      width: 25px;
+      height: 15px;
+      background: green;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+      left: 25px;
+      transform: rotate(-30deg);
+    }
+    #ap:hover{
+      transform: scale(1.1); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); 
+    }
+  </style>
+</head>
+<body>
+  <div class="apple" id="ap">
+    <div class="leaf" id="ap"></div>
+  </div>
+</body>
+</html>

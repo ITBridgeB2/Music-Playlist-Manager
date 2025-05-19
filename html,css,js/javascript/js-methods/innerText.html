@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type ="text/javascript">
+        function change(){
+            var msg = document.getElementById("message");
+           // msg.innerText="Hello and good morning";cant put style to innertext
+            msg.innerHTML="<font color=red>Hello and good morning";
+            var button1 = document.getElementById("btn1");
+            button1.value="processing";
+            var daymessage = document.getElementById("day");
+            daymessage.innerText ="Today is monday"
+        }
+    </script>
+</head>
+<body>
+    <div id ="message">
+        Hello
+
+    </div>
+    <input type ="button"value ="click" id="btn1"onclick="change()"><span id ="day"></span>
+</body>
+</html>

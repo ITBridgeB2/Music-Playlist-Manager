@@ -1,0 +1,62 @@
+[
+    {
+      "customerId": 1,
+      "customerName": "Alice Johnson",
+      "mobileNumber": "9876543210",
+      "billAmount": 120.50
+    },
+    {
+      "customerId": 2,
+      "customerName": "Bob Smith",
+      "mobileNumber": "8765432109",
+      "billAmount": 85.00
+    },
+    {
+      "customerId": 3,
+      "customerName": "Charlie Brown",
+      "mobileNumber": "7654321098",
+      "billAmount": 230.75
+    },
+    {
+      "customerId": 4,
+      "customerName": "Diana Prince",
+      "mobileNumber": "6543210987",
+      "billAmount": 99.99
+    },
+    {
+      "customerId": 5,
+      "customerName": "Ethan Hunt",
+      "mobileNumber": "5432109876",
+      "billAmount": 150.00
+    },
+    {
+      "customerId": 6,
+      "customerName": "Fiona Gallagher",
+      "mobileNumber": "4321098765",
+      "billAmount": 110.25
+    },
+    {
+      "customerId": 7,
+      "customerName": "George Bailey",
+      "mobileNumber": "3210987654",
+      "billAmount": 45.30
+    },
+    {
+      "customerId": 8,
+      "customerName": "Hannah Montana",
+      "mobileNumber": "2109876543",
+      "billAmount": 300.00
+    },
+    {
+      "customerId": 9,
+      "customerName": "Ian Malcolm",
+      "mobileNumber": "1098765432",
+      "billAmount": 75.75
+    },
+    {
+      "customerId": 10,
+      "customerName": "Jane Doe",
+      "mobileNumber": "9988776655",
+      "billAmount": 200.00
+    }
+  ]

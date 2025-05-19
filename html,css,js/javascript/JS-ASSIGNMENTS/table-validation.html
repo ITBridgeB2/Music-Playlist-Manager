@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            padding: 2px;
+            border-spacing: 3px;
+            border-color: black;
+            border-width: 3px;
+            border: 2px solid black;
+            background-color: rgb(238, 163, 194);
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        function validateuname() {
+            let usname = document.getElementById("uname");
+            let message1 = document.getElementById("msg1");
+            if (usname.value === "") {
+                message1.innerHTML = `<font color=red>Please enter your username `;
+                return false;
+            } 
+            else {
+                message1.innerHTML = `<font color=green>welcome ${usname.value}`;
+                return true;
+            }
+        }
+
+        function validategen() {
+            let gend = document.querySelector('input[name="gender"]:checked');
+            let message2 = document.getElementById('msg2');
+            if (!gend) {
+                message2.innerHTML = `<font color=red >Please select a gender`;
+                return false;
+            } else {
+                message2.innerHTML = `<font color =green>the gender you have selected is ${gend.value}`;
+                return true;
+            }
+        }
+
+        function validatecomment() {
+            let com = document.querySelector('input[name="comment"]:checked');
+            let message3 = document.getElementById('msg3');
+            if (!com) {
+                message3.innerHTML = `<font color =red>Please select a comment`;
+                return false;
+            } else {
+                message3.innerHTML = `<font color =green>you have ${com.value}d`;
+                return true;
+            }
+        }
+
+        function validate() {
+            let valid = validateuname() & validategen() & validatecomment();
+            let message4 = document.getElementById('msg4');
+            if (valid) {
+                message4.innerHTML = `<font style=color:green>Welcome!`;
+            }
+             else {
+                message4.innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>USER NAME:</td>
+            <td>
+                <input type="text" id="uname" onblur="validateuname()">   
+            </td>
+        </tr>
+        <tr>
+            <td>SPOUSE NAME:</td>
+            <td>
+                <input type="text" id="sname">   
+            </td>
+        </tr>
+        <tr>
+            <td>GENDER</td>
+            <td>
+                <input type="radio" name="gender" value="male"> MALE
+                <input type="radio" name="gender" value="female"> FEMALE
+            </td>
+        </tr>
+        <tr>
+            <td>COMMENTS:</td>
+            <td>
+                <input type="radio" name="comment" value="like"> LIKE
+                <input type="radio" name="comment" value="dont like"> Don't like
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input type="button" value="Submit" onclick="validate()">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3"><div id="msg1"onblur="validateuname()"></div></td>
+        </tr>
+        <tr>
+            <td colspan="3"><div id="msg2"onblur=" validategen()"></div></td>
+        </tr>
+        <tr>
+            <td colspan="3"><div id="msg3" onblur="validatecomment()"></div></td>
+        </tr>
+        <tr>
+            <td colspan="3"><div id="msg4" onblur="validatecomment()"></div></td>
+        </tr>
+    </table>
+</body>
+</html>

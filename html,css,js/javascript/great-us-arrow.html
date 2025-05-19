@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greatest Number</title>
+</head>
+<body>
+    <script>
+        greatestNumber = (num1, num2, num3 = 100) => {
+            if (num1 == null || num1 === "" || num2 == null || num2 === "") {
+                alert("Please provide at least two valid numbers");
+                return;
+            }
+
+            return Math.max(num1, num2, num3);
+        }
+    </script>
+
+    <input type="button" value="Find Greatest Number" onclick="alert(greatestNumber(prompt('Enter first number'), prompt('Enter second number'), prompt('Enter third number')))">
+
+</body>
+</html>

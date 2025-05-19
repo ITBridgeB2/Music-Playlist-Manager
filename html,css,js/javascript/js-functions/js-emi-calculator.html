@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <script type="text/javascript">
+        function validatePrincipal() {
+            let P = parseInt(document.getElementById("pamount").value);
+            let message1 = document.getElementById("PA");
+            let valid = true;
+            if (P < 0 || isNaN(P)) {
+                message1.innerHTML = "P should be a number and It cannot be zero";
+            }
+            else {
+                message1.innerHTML = "";
+                return true;
+            }
+
+        }
+        function validateReturn() {
+            let R = parseInt(document.getElementById("rate").value);
+            let message2 = document.getElementById("AR")
+            let valid = true;
+            if (isNaN(R) || R < 0) {
+                message2.innerHTML = "R should be a number and should be greater than zero";
+
+            }
+            else {
+                message2.innerHTML = "";
+                return true;
+            }
+        }
+        function validateTenure() {
+            let N = parseInt(document.getElementById("tenure").value);
+            let message3 = document.getElementById("TN");
+            let valid = true;
+            if (isNaN(N) || N < 0) {
+                message3.innerHTML = "N should be a number greater than zero"
+
+            }
+            else {
+                message3.innerHTML = "";
+                return true;
+            }
+        }
+        function calculateEMI() {
+            let P = parseInt(document.getElementById("pamount").value);
+            let R = parseInt(document.getElementById("rate").value);
+            let N = parseInt(document.getElementById("tenure").value);
+            let valid = validatePrincipal() & validateReturn() & validateTenure();
+            if (valid) {
+                let MR = R / (12 * 100);
+                let EMI = (P * MR * Math.pow(1 + MR, N)) / (Math.pow(1 + MR, N) - 1);
+                document.getElementById("result").innerHTML = `The EMI is: ₹${EMI.toFixed(2)}`;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <h2>EMI Calculator</h2>
+
+
+    <label for="pamount">Loan Amount (₹):</label>
+    <input type="number" id="pamount" placeholder="Enter loan amount" onblur="validatePrincipal()">
+    <span id="PA" style="color: red;"></span>
+    <br><br>
+
+
+    <label for="rate">Annual Interest Rate (%):</label>
+    <input type="number" id="rate" placeholder="Enter annual interest rate" onblur="validateReturn()">
+    <span id="AR" style="color: red;"></span>
+    <br><br>
+
+
+    <label for="tenure">Tenure (months):</label>
+    <input type="number" id="tenure" placeholder="Enter loan tenure in months" onblur="validateTenure()">
+    <span id="TN" style="color: red;"></span>
+    <br><br>
+
+
+    <button onclick="calculateEMI()">Calculate EMI</button>
+
+
+    <p id="result" style="font-weight: bold; margin-top: 20px;"></p>
+</body>
+
+</html>

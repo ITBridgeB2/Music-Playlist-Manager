@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+    .login{
+        background-color: rgb(3, 73, 24);
+        color: rgb(230, 233, 237);
+    }
+    .register{
+        background-color:rgb(22, 41, 84);
+        color:aliceblue;
+    }
+    .delete{
+        background-color:rgb(164, 5, 5);
+        color: aliceblue;
+    }
+    .reset{
+        background-color: rgb(7, 71, 71);
+        color:aliceblue;
+        width:200px;
+    }
+</style>
+</head>
+
+<body >
+    <form action="success.html">
+        <h2 align="center">Login Form</h2>
+        <table cellspacing="10" cellpadding="10" align="center">
+            <tr>
+                <td>User name :</td>
+                <td><input type="text" placeholder="enter username" name="username" required autocomplete="on" autofocus></td>
+            </tr>
+            <tr>
+                <td>Password :</td>
+                <td><input type="password" name="password" required></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="male"  >Male
+                    <input type="radio" name="gender" value="female" >Female
+                    <input type="radio" name="gender" value="others" required>Others
+                </td>
+            <tr>
+                <td>ID</td>
+                <td>
+                    <input type="checkbox" name="idproof" value="voterid" required>Voter ID
+                    <input type="checkbox" name="idproof" value="ration">Ration Card
+                    <input type="checkbox" name="idproof" value="passport" required>Passport
+                    <input type="checkbox" name="idproof" value="aadhar">Aadhar Card
+                </td>
+            <tr>
+                <td>
+                    Role
+                </td>
+                <td>
+                    <select name="role">
+                        <option value="select">----select role---</option>
+                        <option value="admin">Admin</option>
+                        <option value="employee" >Employee</option>
+                        <option value="guest" >Guest</option>
+                        <option value="others">Others</option>
+                    </select>
+                </td>
+            <tr>
+                <td>
+                    Communication
+                </td>
+                <td>
+                    <select name="communication" multiple>
+                        <option value="call">Call</option>
+                        <option value="sms">SMS</option>
+                        <option value="email" selected>Email</option>
+                        <option value="post">POST</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Comments:
+                </td>
+                <td>
+                    <textarea cols="20" rows="5" name="comments">
+
+                    </textarea>
+                </td>
+
+            </tr>
+            <tr>
+                <td align="center">
+                    <input class="login"type="submit" value="Login">
+                    <input class="register" type="submit" value="Register" formaction="register.html">
+                    <input class="delete"type="submit" value="Delete" formaction="delete.html">
+
+                </td>
+                <td align="center">
+                    <input type="reset" class="reset">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>

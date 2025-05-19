@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <script>
+        function calculateAge() {
+            try {
+                let date = parseInt(document.getElementById("date").value);
+                let month = parseInt(document.getElementById("month").value);
+                let year = parseInt(document.getElementById("year").value);
+
+                if (isNaN(date) || isNaN(month) || isNaN(year)) throw "Please enter valid numbers.";
+                
+                let today = new Date();
+                let dob = new Date(year, month - 1, date);
+
+                if (dob > today) throw "Date of birth cannot be in the future.";
+                
+                let age = today.getFullYear() - dob.getFullYear();
+                if (today.getMonth() < dob.getMonth() || 
+                   (today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate())) {
+                    age--;
+                }
+
+                if (age > 120) throw "Age cannot be more than 120 years.";
+
+                alert("Your age is: " + age + " years");
+            } catch (error) {
+                alert("Error: " + error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Age Calculator</h2>
+    <label>Date: <input type="number" id="date" min="1" max="31"></label><br>
+    <label>Month: <input type="number" id="month" min="1" max="12"></label><br>
+    <label>Year: <input type="number" id="year" min="1900" max="2025"></label><br>
+    <button onclick="calculateAge()">Calculate Age</button>
+</body>
+</html>

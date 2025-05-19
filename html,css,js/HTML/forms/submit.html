@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Form</title>
+    <style>
+        .table1 {
+            margin: auto;
+            background-color: rgb(41, 77, 91);
+            padding: 10px;
+            border-radius: 10px;
+            border-color: black;
+        }
+        .table2 {
+            margin: auto;
+            background-color: rgb(77, 84, 87);
+            padding: 10px;
+            border-radius: 10px;
+            border-color: black;
+        }
+        .form1{
+            background-color: beige;
+            color: black;
+        }
+        .form2{
+            background-color: rgb(48, 48, 18);
+            color: black; 
+        }
+        video{
+            video {
+    width: 80%; 
+    max-width: 80px; 
+    height: 40%;
+    border-radius: 10px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+    display: block;
+    margin: 20px auto;
+    outline: none; 
+    background-color: black; 
+}
+
+        }
+
+    </style>
+</head>
+<body>
+    <form class="form1" action="success.html">
+        <table class="table1" cellspacing="10" cellpadding="10">
+            <tr>
+                <td><label for="firstname">FIRST NAME:</label></td>
+                <td><input type="text" name="firstname" id="firstname" placeholder="Enter your first name" autocomplete="off" required></td>
+            </tr>
+            <tr>
+                <td><label for="lastname">LAST NAME:</label></td>
+                <td><input type="text" name="lastname" id="lastname" placeholder="Enter your last name" autocomplete="off" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">EMAIL ID:</label></td>
+                <td><input type="email" name="email" id="email" placeholder="Enter your email" autocomplete="off" autofocus required></td>
+            </tr>
+            <tr>
+                <td>How you heard about us:</td>
+                <td>
+                    <input list="heard" name="reference" id="reference">
+                    <datalist id="heard">
+                        <option value="Newspaper"></option>
+                        <option value="Email"></option>
+                        <option value="SMS"></option>
+                        <option value="Friend"></option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pincode">Pincode:</label></td>
+                <td><input type="text" id="pincode" name="pincode"></td>
+            </tr>
+            <tr>
+                <td><label for="district">District:</label></td>
+                <td><input type="text" id="district" name="district" value="Bengaluru" disabled></td>
+            </tr>
+            <tr>
+                <td><label for="state">State:</label></td>
+                <td><input type="text" id="state" name="state" value="Karnataka" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="file">Select File:</label></td>
+                <td><input type="file" name="file" id="file"></td>
+            </tr>
+            <tr>
+                <td><label for="color">Pick a Color:</label></td>
+                <td><input type="color" name="color" id="color"></td>
+            </tr>
+            <tr>
+                <td><label for="rating">Rate Us (1-10):</label></td>
+                <td><input type="range" name="rating" id="rating" min="1" max="10"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit"></td>
+                <td><input type="submit" value="Register" formaction="register.html"></td>
+                <td><input type="submit" value="Delete" formaction="delete.html" formnovalidate></td>
+            </tr>
+        </table>
+    </form>
+    <form class="form2" oninput="result.value=parseInt(num1.value)+parseInt(num2.value)">
+        <table class="table2" cellspacing="10"cellpadding="10"align="center">
+            <tr>
+                <td>
+                    <input type="number" name="num1"value="0"/>
+                    +<input type="number" name="num2"value="0"/>
+                    =<output name="result">
+                </td>
+            </tr>
+            <tr><td>
+                <video src="5614724-hd_720_1280_30fps.mp4"controls autoplay controls loop></video>
+            </td></tr>
+            <tr><td>
+                <audio src="knightrider.mp3"autoplay controls loop></audio>
+            </td></tr>
+        
+        </table>
+    </form>
+</body>
+</html>

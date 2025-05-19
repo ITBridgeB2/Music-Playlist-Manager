@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type ="text/javascript">
+        function validate(num){
+            if(num>=0&num<=100){
+                return true;
+            }
+            else{
+                return false
+            }
+
+        }
+        function checkvalidate(num){
+            result = validate(num);
+            if(result=true)
+        {
+            alert("number is valid")
+        }
+        else{
+            alert("number is invalid")
+        }
+        }
+        function age(num){
+            if(num>=18){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        function checkage(num){
+        result=age(num);
+        if (result==true)
+        
+        {
+            alert("ENJOY")
+        }
+        else{
+            alert("YOU ARE UNDER AGE GET OUT OF HERE")
+        }
+    }
+    </script>
+</head>
+<body>
+    <input type="button"value ="click"onclick="checkvalidate('18')">
+    <input type="button"value ="click"onclick="checkage('17')">
+</body>
+</html>

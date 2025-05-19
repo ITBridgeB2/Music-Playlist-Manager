@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+         
+        function CAGE()
+        {
+        let day = parseInt(document.getElementById('day').value);
+        let month = parseInt(document.getElementById('month').value)-1;
+        let year = parseInt(document.getElementById('year').value);
+        let today = new Date();
+        let dob = new Date(year, month, day);
+         let age = today-dob;
+        let calc = 1000*60*60*24*365;
+        alert(`YOUR AGE IS : ${Math.floor(age/calc)}`); 
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+            <thead>
+                <tr>
+                    <td> AGE CALCULATOR</td>
+                </tr>
+            </thead>
+            <tr>
+                <td>DATE     </td>
+                <td><input type="text"name="date"id="day"></td>
+            </tr>
+            <tr>
+                <td>MONTH  </td>
+                <td><input type="text"name="date"id="month"></td>
+            </tr>
+            <tr>
+                <td>YEAR    </td>
+                <td><input type="text"name="date"id="year"></td>
+            </tr>
+            <tr><td colspan ="4"valign="center"><input type="button"name="calculateAge" value="calculate"id="date" onclick="CAGE()"></td></tr>
+        </table>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Checker</title>
+    <script>
+        let temp = ["31", "34", "35"]; 
+
+        function getTemperature(city) {
+            if (city === 'pune') {
+                return `Pune - ${temp[0]}°C`;
+            } else if (city === 'bangalore') {
+                return `Bangalore - ${temp[1]}°C`;
+            } else if (city === 'chennai') {
+                return `Chennai - ${temp[2]}°C`;
+            } else {
+                return "Temperature not available";
+            }
+        }
+
+        function display() {
+            let city = prompt("Enter city name:");
+            if (city) {
+                let result = getTemperature(city.toLowerCase());
+                alert(result);
+            } else {
+                alert("Please enter a valid city name.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Get Temperature" onclick="display()">
+</body>
+</html>
+

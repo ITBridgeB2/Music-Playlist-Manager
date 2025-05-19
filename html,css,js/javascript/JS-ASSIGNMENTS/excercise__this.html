@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    function buy(){
+        let n1=Number(num1.value);
+        let n2=Number(num2.value);
+        message1=document.getElementById('output')
+        message2=document.getElementById('qrout')
+        message3=document.getElementById('prout')
+        if(n1<0){
+        message2.innerHTML="<font color=red>please enter the correct number"
+         
+        }
+        if(n2<0){
+        message3.innerHTML="<font color=red>please enter the correct number"
+        }
+        if(isNaN(n1)||isNaN(n2)){
+            message.innerHTML="please enter valid number"
+        }
+        else{
+            total = n1*n2
+        }
+        message.innerHTML=`<font color=green>your cart total is ${total}`
+    }
+    function filldetails(){
+        var pname=document.getElementById('pend')
+        pname.value="Pen Drive";
+    }
+    </script>
+    
+</head>
+<body onload="filldetails()">
+    <form>
+ PRODUCT:<input type="text"name="pend"id="pend"><br/>
+  QUANTITY:<input type="text"id="num1"name="num1"><span id="qrout"></span><br/>
+  PRICE:<input type="text"id="num2"name="num2"><span id="prout"></span><br/>
+  <input type="button"id="btn"name="btn"onclick="buy()"value="buy">
+  <div id="output"></div>
+</form>
+</body>
+</html>

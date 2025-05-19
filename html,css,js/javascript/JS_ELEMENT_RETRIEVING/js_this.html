@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // Declare a global variable to store the full name
+        let fname = ""; 
+
+        // Function to concatenate the input value to fname
+        function fullname(data) {
+            // 'data' refers to the element that triggered the event (due to 'this' keyword)
+            // data.value refers to the value entered in the input field
+            fname = fname.concat(data.value) + " "; 
+
+            // Get the element with id="output" to display the result
+            var output = document.getElementById("output"); 
+
+            // Display the concatenated full name
+            output.innerHTML = `Welcome ${fname}`; 
+        }
+    </script>
+</head>
+<body>
+    <!-- When the user leaves the input field (onblur), it calls the fullname() function -->
+    <!-- 'this' refers to the input element itself -->
+    <input type="text" onblur="fullname(this)"> 
+    <input type="text" onblur="fullname(this)"> 
+    <input type="text" onblur="fullname(this)"> 
+
+    <!-- Div to display the concatenated full name -->
+    <div id="output"></div>
+</body>
+</html>
+ 

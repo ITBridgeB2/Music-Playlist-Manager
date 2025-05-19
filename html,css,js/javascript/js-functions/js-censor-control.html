@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        let invalidNames = ['idiot', 'incompetent', 'fools'];
+
+        function validName(name) {
+            if (invalidNames.includes(name)) {
+                return true; 
+            } else {
+                return false; 
+            }
+        }
+
+        function display() {
+            let name = prompt("Enter your name:");
+            let result = validName(name);
+
+            if (result) { 
+                alert("Invalid name! Be careful using these words.");
+            } else {
+                alert("What's up!");
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="click" onclick="display()">
+</body>
+</html>

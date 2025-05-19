@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+let cities =["mangaluru","bengaluru","chickmangaluru","mandya"]
+let cities2 = new Array();
+cities2[0]="tamilnadu"
+cities2[1]="chennai"
+cities2[2]="coimbatore"
+cities2[3]="kodaikanal"
+cities2[4]="dindigul"
+cities2[5]="ooty"
+
+for(let i=0;i<cities.length;i++)
+{
+    document.write(`${i+1}. ${cities[i]}<br>`)
+}
+for(temp in cities)
+{
+    document.write(`${Number(temp)+1} ${cities[temp]}<br>`)
+}
+for(let i=0;i<cities2.length;i++)
+{
+    document.write(`<h2> ${cities2[0]} ${cities2[i+1]}<br>`)
+}
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

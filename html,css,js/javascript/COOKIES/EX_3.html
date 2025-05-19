@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="loadValues()">
+    <script>
+        function addNumbers(){
+            var num1 = document.getElementById("num1");
+            var num2 = document.getElementById("num2");
+            document.forms[0].num3.value = parseInt(num1.value) +parseInt(num2.value);
+
+            var today = new Date();
+            today.setDate(today.getDate() + 30);
+            document.cookie = "num1=" + escape(num1.value) + ";expires=" + today.toGMTString();
+            document.cookie = "num2=" + escape(num2.value) + ";expires=" + today.toGMTString();
+            document.cookie = "num3=" + escape(num3.value) + ";expires=" + today.toGMTString();
+
+    }
+
+    function readCookie(cookieName){
+        if(document.cookie.length > 0){
+            ind = document.cookie.indexOf(cookieName);
+            if(ind == -1){
+                return "no-cookie-found-with-the-name-" + cookieName;
+            }
+            else{
+                ind = ind +cookieName.length + 1;
+                ind1 = document.cookie.indexOf(";", ind);
+                if(ind1 == -1){
+                    ind1 = document.cookie.length; //full length till end
+                }
+                return unescape(document.cookie.substring(ind,ind1));
+
+                
+            }
+        }
+        else{
+            return "no-cookies-found";
+        }
+    }
+
+    function loadValues(){
+        number1 = readCookie('num1');
+        number2 = readCookie('num2');
+        result = readCookie('num3');
+        document.getElementById('num1').value = number1;
+        document.getElementById('num2').value = number2;
+        document.getElementById('num3').value = result;
+    }
+
+
+    </script>
+
+    <form>
+        First Number : <input type="text" id="num1" ><div id="error1"></div><br/>
+        Second Number :<input type="text" id="num2" onBlur="addNumbers()">  <div id="error2"><br/>
+        Result :<input type="text" id="num3"><br/>
+    </form>
+</body>
+</html>

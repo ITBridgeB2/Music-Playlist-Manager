@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    function validateForm(){
+        let name = document.getElementById("name").value;
+        let cat = document.querySelector('input[name="category"]:checked');
+        let message = document.getElementById("msg");
+        if(name.length==0)
+    {
+         message.innerHTML="please enter a name";
+    }
+    if (! cat) {
+    message.innerHTML = `${name} please select a category`;
+   } else {
+    message.innerHTML = `${name} your are from ${cat.value} category`;
+   }
+
+    }
+    </script>
+    <style>
+        table{
+            padding:50px;
+            border-spacing: 4px;
+            border:3px;
+            border-color: black;
+            width:50%;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            
+            <tr>
+                <td>
+    NAME:<input type ="text" name="ENTER-NAME"id="name" ></td>
+    </tr>
+    <tr>
+        <td>CATEGORY</td>
+    </tr>
+    <tr>
+        <td> <input type ="radio"name="category"value="OBC"id="obc">OBC </td><br>
+        <td> <input type ="radio"name="category"value="SC"id="sc">SC </td><br>
+        <td> <input type ="radio"name="category"value="ST"id="st">ST </td><br>
+        <td> <input type ="radio"name="category"value="GENERAL"id="general">GENERAL </td><br>
+    </tr>
+    <tr><td>
+        <input type = "button" value="GO"id="GO" onclick="validateForm()"><span id = "msg"></span>
+    </td></tr>
+    </table>
+    </form>
+    
+</body>
+</html>

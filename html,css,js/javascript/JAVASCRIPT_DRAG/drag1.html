@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        div {
+            border: 1px solid black;
+            border-width: 2px 2px;
+            width: 400px;
+            height: 400px;
+            display: inline-block;
+        }
+
+        body { 
+            display: flex;
+        }
+    </style>
+    <script>
+        function allowDrop(ev){
+            ev.preventDefault();
+
+        }
+        function transferImage(env) {
+            env.dataTransfer.setData("hh",env.target.id)
+          
+        }
+        function showImage(env){
+            var data=env.dataTransfer.getData("hh")
+            env.target.appendChild(document.getElementById(data))
+
+            
+        }
+    </script>
+</head>
+
+<body>
+    
+
+    <div id="helloId" ondrop="showImage(event)" ondragover="allowDrop(event)">
+    </div>
+
+    <div id="container2" ondrop="showImage(event)" ondragover="allowDrop(event)"> <img id="airplane" src="energy-electricity.jpg" height="300" width="300" draggable="true"
+        ondragstart="transferImage(event)" >
+</body>
+
+</html>

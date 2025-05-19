@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        function validateUsername() {
+            var uname = document.getElementById("accno").value.toUpperCase();
+            var message1 = document.getElementById("errusername");
+
+            
+            message1.innerHTML = "";
+
+            if (uname.length === 0) {
+                message1.innerHTML = "<font color='red'>Username length should not be zero</font>";
+                return false;
+            }
+            return true;
+        }
+
+        function validatePassword() {
+            var password = document.getElementById("pass").value;
+            var message2 = document.getElementById("errpassword");
+
+            
+            message2.innerHTML = "";
+
+            if (password.length === 0) {
+                message2.innerHTML = "<font color='red'>Password length should not be zero</font>";
+                return false;
+            }
+
+            if (password.length < 8 || password.length > 12) {
+                message2.innerHTML = "<font color='red'>Password length should be between 8 and 12 characters</font>";
+                return false;
+            }
+            return true;
+        }
+
+        function validateConfirmPassword() {
+            var password = document.getElementById("pass").value;
+            var confirm = document.getElementById("comfirm").value;
+            var message3 = document.getElementById("errpassword2");
+
+            
+            message3.innerHTML = "";
+
+            if (confirm !== password) {
+                message3.innerHTML = "<font color='red'>Passwords do not match</font>";
+                return false;
+            }
+            return true;
+        }
+
+        function handleSubmit(event) {
+            
+            event.preventDefault();
+
+            let valid =
+                validateUsername() &&
+                validatePassword() &&
+                validateConfirmPassword();
+
+            if (valid) {
+                alert("Welcome: " + document.getElementById("accno").value.toUpperCase());
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="handleSubmit(event)">
+        
+        Username: 
+        <input type="text" name="username" id="accno"
+            onblur="validateUsername()" 
+            onkeydown="if(event.key === 'Enter') validateUsername()"
+        />
+        <br />
+        <span id="errusername"></span>
+        <br />
+
+        
+        Password (8-12): 
+        <input type="password" name="password" id="pass"
+            onblur="validatePassword()" 
+            onkeydown="if(event.key === 'Enter') validatePassword()"
+        />
+        <br />
+        <span id="errpassword"></span>
+        <br />
+
+        
+        Confirm Password: 
+        <input type="password" name="confirm" id="comfirm"
+            onblur="validateConfirmPassword()" 
+            onkeydown="if(event.key === 'Enter') validateConfirmPassword()"
+        />
+        <br />
+        <span id="errpassword2"></span>
+        <br />
+
+        
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

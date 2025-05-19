@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function changeimage(){
+            document.images[2].src = "leave1-image.jpg";
+        }
+        function changeimageAgain(){
+            document.images[2].src = "stay-image.jpg";
+        }
+    </script>
+</head>
+<body>
+    <img src="stay-image.jpg" height="300" width="400" onmouseover="changeimage()" onmouseout="changeimageAgain()">
+    <img src="img3.jpg" height="300" width="400">
+    <img src="img4.jpg" height="300" width="400">
+</body>
+</html>

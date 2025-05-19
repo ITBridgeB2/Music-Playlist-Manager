@@ -1,0 +1,104 @@
+order page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORDER FORM</title>
+</head>
+<body bgcolor="black" text="white">
+    
+    <form action="sucess.html">
+        <h2 align ="center">ORDER FORM</h2>
+        <table cellspacing="6"cellpadding="4"align="center">
+            <tr>
+                <td>FIRST NAME:</td>
+<td>
+
+<input type="text"placeholder="FIRST NAME">
+</td>
+
+</tr>
+<tr>
+<td>SECOND NAME</td>
+<td><input type ="text"placeholder="SECOND NAME"></td>
+
+</tr>
+<tr>
+    <td>GENDER</td>
+    <td>
+    <input type="radio" name="gender" value="male">male
+    <input type="radio" name="gender"value="female">female
+</td>
+</tr>
+<tr>
+    <td>
+        COMMENT
+    </td><td>
+    <textarea cols="20" rows="5"name="comment"placeholder="comment something here"
+    text bgcolor="black">
+        </textarea>
+        </td>
+</tr>
+<tr>
+    <td>
+        MEMBERSHIP TYPE
+    </td>
+    <td>
+        <select name="MEMBERSHIP">
+            <option value="">-selectmembership-</option>
+            <option value="1 year">1 year</option>
+            <option value="2 year">2year</option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td>
+        </td>
+        <td>SELECT PRODUCT LIST</td>
+       
+            <tr>
+                <th>PRODUCT NAME</th>
+                <th></th>
+                <th>PRICE</th>
+                <th>QUANTITY</th>
+            </tr>
+            <tr>
+                <td>Coffee Maker</td>
+                <td><input type="checkbox"></td>
+                <td>300.25</td>
+                <td><input type="number" placeholder="0"></td>
+            </tr>
+            <tr>
+                <td>GOURMET BEANS</td>
+                <td><input type="checkbox" checked></td>
+                <td>100.15</td>
+                <td><input type="number" placeholder="0"></td>
+            </tr>
+            <tr>
+                <td>Coffee Filter</td>
+                <td><input type="checkbox"></td>
+                <td>125.85</td>
+                <td><input type="number" placeholder="3"></td>
+            </tr>
+            <tr>
+                <td>Cups and Mugs</td>
+                <td><input type="checkbox"></td>
+                <td>50.90</td>
+                <td><input type="number" placeholder="0"></td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center">
+                    <input type="submit" value="Submit Order">
+                </td>
+            </tr>
+        
+        
+
+</table>
+
+        
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    let games =new Array();
+    games[0]="fifa";
+    games[1]="pes";
+    games[2]="pool";
+    games[3]="pubg";
+    games[4]="gta";
+
+    for(let i=0;i<games.length;i++){
+        document.write(`${i+1}.${games[i]}<br/>`)
+    }
+    for(temp in games){
+        document.write(`${Number(temp)+1}.${games[temp]}<br/>`)
+    }
+   /* alert("these are the games")*/
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

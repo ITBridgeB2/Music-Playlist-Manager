@@ -1,0 +1,15 @@
+[
+    {
+      "id": 1,
+      "visitorName": "Alice",
+      "visitDate": "2024-04-10",
+      "purpose": "Meeting"
+    },
+    {
+      "id": 2,
+      "visitorName": "Bob",
+      "visitDate": "2024-04-11",
+      "purpose": "Delivery"
+    }
+  ]
+  

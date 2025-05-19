@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+       function makevis() {
+           cityadd.style.display = "block";
+           let kacities = new Array("mangaluru","chikmangaluru","mysuru","udupi")
+           let apcities= new Array("vijaywada","vizag","ongle","nellore")
+           let tncities= new Array("coimbatore","dindigul","palani","chennai" )
+       }       
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label>State:*</label>  
+                    <select id="state" onchange="makevis(this.form.cityadd)">
+                        <option value="ANDRA PRADESH">ANDRA PRADESH</option>
+                        <option value="KARNATAKA">KARNATAKA</option>
+                        <option value="TAMIL NADU">TAMIL NADU</option>
+                    </select>
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>City:*</label>
+                    <select style="display:none;" name="cityadd" id="cityadd">
+                        <option value="xyx">Select City</option>
+                        <option value="ghh">Selec</option>
+                        <option value="hgd">Set City</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

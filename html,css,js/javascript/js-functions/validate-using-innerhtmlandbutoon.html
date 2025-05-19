@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate() {
+            var uname = document.getElementById("accno").value.toUpperCase();
+            var password = document.getElementById("pass").value;
+            var confirm = document.getElementById("comfirm").value;
+
+            var message1 = document.getElementById("errusername");
+            var message2 = document.getElementById("errpassword");
+            var message3 = document.getElementById("errpassword2");
+
+            
+            message1.innerHTML = "";
+            message2.innerHTML = "";
+            message3.innerHTML = "";
+
+            if (uname.length == 0) {
+                message1.innerHTML = "<font color='red'>Username length should not be zero</font>";
+                return;
+            }
+
+            if (password.length == 0) {
+                message2.innerHTML = "<font color='red'>Password length should not be zero</font>";
+                return;
+            }
+
+            if (password.length < 8 || password.length > 12) {
+                message2.innerHTML = "<font color='red'>Password length should be between 8 and 12 characters</font>";
+                return;
+            }
+
+            if (password !== confirm) {
+                message3.innerHTML = "<font color='red'>Passwords do not match</font>";
+                return;
+            }
+
+            alert("Welcome: " + uname);
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Username: <input type="text" name="username" id="accno"><span id="errusername"></span><br>
+        
+        <br>
+
+        Password (8-12): <input type="password" name="password" id="pass"><span id="errpassword"></span><br>
+        
+        <br>
+
+        Confirm Password: <input type="password" name="confirm" id="comfirm"><span id="errpassword2"></span><br>
+        
+        <br>
+
+        <input type="button" value="Login" onclick="validate()">
+    </form>
+</body>
+</html>

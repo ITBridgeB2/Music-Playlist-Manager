@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+    <script>
+        let randomNumber = Math.floor(Math.random() * 10) + 1;
+        let attempts = 3;
+
+        function playGame(num1, num2, num3) {
+            let output = document.getElementById('output');
+
+            let n1 = Number(num1.value);
+            let n2 = Number(num2.value);
+            let n3 = Number(num3.value);
+
+            if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+                output.innerHTML = " Please enter valid numbers.";
+                return;
+            }
+
+            if (n1 === randomNumber || n2 === randomNumber || n3 === randomNumber) {
+                output.innerHTML = ` Congratulations! You guessed the right number: ${randomNumber}`;
+                resetGame();
+                return;
+            } else {
+                attempts--;
+                if (attempts > 0) {
+                    output.innerHTML = ` Wrong guess. Attempts left: ${attempts}`;
+                } else {
+                    output.innerHTML = ` Game over! The correct number was ${randomNumber}.`;
+                    resetGame();
+                }
+            }
+        }
+
+        function resetGame() {
+            attempts = 3;
+            randomNumber = Math.floor(Math.random() * 10) + 1;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        NUM1: <input type="text" name="num1" id="num1"><br>
+        NUM2: <input type="text" name="num2" id="num2"><br>
+        NUM3: <input type="text" name="num3" id="num3"><br>
+        <input type="button" value="Start Game" 
+               onclick="playGame(this.form.num1, this.form.num2, this.form.num3)" />
+        <div id="output"></div>
+    </form>
+</body>
+</html>

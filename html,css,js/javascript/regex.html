@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIN_CODE_VALIDATION</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 24px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 6px rgba(76, 175, 80, 0.4);
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+    <script>
+        function validateInput(data) {
+            const regex = /[^\D\s]/g;
+            const lastCharacter = data.value.slice(-1);
+            const result = lastCharacter.search(regex);
+            let m1 = document.getElementById("output")
+
+            // ✅ Check if length exceeds 6 characters
+            if (data.value.length > 6) {
+                m1.innerHTML="<font color = red>Please enter a valid pin"
+                data.value = data.value.slice(0, -1);
+                return;
+            }
+
+            // ✅ Check for non-digit input
+            if (result === -1) {
+                m1.innerHTML="<font color=red>Only digits are allowed"
+                data.value = data.value.slice(0, -1);
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Enter PIN CODE</h2>
+    <input 
+        type="text" 
+        placeholder="Enter 6-digit pin code" 
+        onkeyup="validateInput(this)"
+    /><div id="output"></div>
+</div>
+
+
+</body>
+</html>

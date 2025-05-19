@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function calculateBill() {
+            let currentDate = new Date();
+            let dueDate = new Date(2025, 1, 4); 
+    
+            let fine = 50; 
+            let dayMillis = 1000 * 60 * 60 * 24; 
+            
+            
+            let difference = currentDate - dueDate;
+            let dayDifference = Math.floor(difference / dayMillis); 
+    
+            let bill = 8700; 
+            let fineAmount = dayDifference > 0 ? dayDifference * fine : 0;
+            let totalBill = bill + fineAmount;
+    
+            if (dayDifference > 0) {
+                alert(`Your bill due date was ${dayDifference} days ago. Your total bill including a fine of ₹${fineAmount} is ₹${totalBill}.`);
+            } else {
+                alert(`Your bill amount to be paid is ₹${bill}.`);
+            }
+        }
+    </script>
+    <style>
+        table{
+            background-color: beige;
+            height :100px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 4px;
+         } 
+         table:hover {
+         transform: translateY(-10px); 
+         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+        }
+        thead{
+            background-color: rgb(86, 86, 131); 
+            color:azure;
+            border-radius: 2px;
+        }
+        thead {
+        background: linear-gradient(to right, rgb(135, 135, 169), rgb(86, 86, 131));
+        color: #fff;
+        }
+        #button{
+            background-color: rgb(176, 173, 170);
+            color:azure;
+            transition: background-color 0.3s ease;
+            border: none; 
+            cursor: pointer;
+            border-radius:3px ;
+            border-collapse:collapse;
+        
+        }
+        #button:hover{
+            background-color: rgb(218, 221, 223);
+            color:rgb(255, 255, 255)
+        }
+        #button:active{
+            background-color: rgb(176, 180, 184);
+            color:azure;
+        }
+        body {
+    background-image: url('electricity.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;}
+    </style>
+
+</head>
+<body>
+    <form>
+    <table>
+        <thead>
+            <th>BILL GENERATOR</th>
+        </thead>
+        <tr>
+            <td>
+    <input type ="button" id ="button" value="calculate bill"onclick="calculateBill()">
+    </td>
+    <tr>
+    </table>
+</form>
+</body>
+</html>

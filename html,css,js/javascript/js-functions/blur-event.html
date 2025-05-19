@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Input Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+        input:focus {
+            border-color: #007bff;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+    <script type="text/javascript">
+        num1 =0;
+        num2=0;
+        num3=0;
+        result=0;
+
+        function validateNum1() {
+             num1 = document.getElementById("numb1").value;
+            var message1 = document.getElementById("errnum1");
+            
+            if (num1.length === 0) {
+                message1.innerHTML = "Enter the first number";
+            } else {
+                message1.innerHTML = "";
+            }
+        }
+
+        function validateNum2() {
+             num2 = document.getElementById("numb2").value;
+            var message2 = document.getElementById("errnum2");
+            
+            if (num2.length === 0) {
+                message2.innerHTML = "Enter the second number";
+            } else {
+                message2.innerHTML = "";
+            }
+        }
+
+        function validateNum3() {
+             num3 = document.getElementById("numb3").value;
+            var message3 = document.getElementById("errnum3");
+            
+            if (num3.length === 0) {
+                message3.innerHTML = "Enter the third number";
+            } else {
+                message3.innerHTML = "";
+            }
+            
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Enter Three Numbers</h2>
+    <input type="text" id="numb1" placeholder="Enter first number" onblur="validateNum1()">
+    <br><span id="errnum1" class="error"></span>
+    
+    <input type="text" id="numb2" placeholder="Enter second number" onblur="validateNum2()">
+    <br><span id="errnum2" class="error"></span>
+    
+    <input type="text" id="numb3" placeholder="Enter third number" onblur="validateNum3()">
+    <br><span id="errnum3" class="error"></span>
+    
+    <button onclick="validateForm()">Submit</button>
+</div>
+
+<script>
+    function validateForm() {
+        validateNum1();
+        validateNum2();
+        validateNum3();
+
+        var num1 = document.getElementById("numb1").value;
+        var num2 = document.getElementById("numb2").value;
+        var num3 = document.getElementById("numb3").value;
+
+        if (num1 && num2 && num3) {
+            alert(`Numbers entered: ${num1}, ${num2}, ${num3}`);
+        }
+    }
+</script>
+
+</body>
+</html>

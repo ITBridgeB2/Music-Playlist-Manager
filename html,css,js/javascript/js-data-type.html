@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA_TYPES</title>
+    <script type="text/javascript">
+        var name = "Mukthar";
+        document.write("My name is " + name + ". ");
+        
+        var marks = 100; // Changed from string to number
+        document.write("And I have scored " + marks + ". ");
+        
+        var result = false;
+        result = Number(marks) > 50; // Fixed Number() syntax
+        
+        if (result) {
+            document.write("I have passed. ");
+        } else {
+            document.write("I need to appear for re-exam. ");
+        }
+
+        let name1 = "Ahmed", name2 = "Ali";
+        let add1 = "Bantval", add2 = "Mangaluru";
+        let message1 = "Welcome aboard", message2 = "Sorry, you are not selected";
+        
+        // Fixed spacing and formatting
+        let message3 = `${name1}, from ${add1}, ${message1}`;
+        let message4 = `${name2}, from ${add2}, ${message2}`;
+        
+        document.write(message3 + "<br>");
+        document.write(message4);
+    </script>
+</head>
+<body>
+</body>
+</html>

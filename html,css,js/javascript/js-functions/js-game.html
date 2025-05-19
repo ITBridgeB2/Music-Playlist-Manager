@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+    <script>
+        function playGame(num1,num2,num3) {
+            let randomNumber = Math.floor(Math.random() * 10) + 1; 
+            let message=document.getElementById('output')
+            let n1=Number(num1.value);
+            let n2=Number(num2.value);
+            let n3=Number(num3.value);
+           if(isNaN(n1)||isNaN(n2)||isNaN(n3)){
+            message.innerHTML="please enter correct number"
+           }
+        if(n1.length==0||n2.length==0||n3.length==0){
+            message.innerHTML="please enter a number"
+           }
+           if(n1==randomNumber||n2==randomNumber||n3==randomNumber){
+            message.innerHTML=`congratulations you have guessed the right number ${randomNumber}`
+           }
+           else{
+            message.innerHTML=`opps the number:[${n1},${n2},${n3}] you have guessed is wrong the random number was${randomNumber}` 
+           }
+           
+        }
+    </script>
+</head>
+<body>
+    <form>
+    <input type="text"name="num1"id="num1">
+    <input type="text"name="num2"id="num2">
+    <input type="text"name="num3"id="num3">
+    <input type="button" value="Start Game" onclick="playGame(this.form.num1,this.form.num2,this.form.num3)" />
+    <div id="output"></div>
+</form>
+</body>
+</html>

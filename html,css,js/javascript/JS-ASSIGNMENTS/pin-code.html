@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function pindet(){
+            let pin1 = document.getElementById('pin').value;
+            let dist = "";
+            let state = "";
+
+            if(pin1 === "560029") {
+                dist = "BANGALORE";
+                state = "KARNATAKA";
+            } 
+            else if(pin1 === "500011") {
+                dist = "HYDERABAD";
+                state = "TELANGANA";
+            } 
+            else {
+                dist = "INVALID";
+                state = "INVALID";
+            }
+
+            document.getElementById('dist').value = dist;
+            document.getElementById('state').value = state;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>PIN-CODE: <input type="text" id="pin" onchange="pindet()"></td>
+        </tr>
+        <tr>
+            <td>DISTRICT: <input type="text" id="dist"></td>
+        </tr>
+        <tr>
+            <td>STATE: <input type="text" id="state"></td>
+        </tr>
+    </table>
+</body>
+</html>

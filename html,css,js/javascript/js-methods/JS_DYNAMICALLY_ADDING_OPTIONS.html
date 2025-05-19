@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    function cityadd(inputcity,selectcityList){
+    let lengthofselect= selectcityList.length;
+    let option = new Option(inputcity.value,inputcity.value);
+    for(i=0;i<lengthofselect;i++){
+        if(inputcity.value===selectcityList[i].value){
+            alert("city already exists")
+            return;
+        
+        }
+        
+        
+        
+    }
+    selectcityList[lengthofselect]=option;
+
+   }
+    function removeoption(inputcity,selectcityList){
+    let lengthofselect=selectcityList.length;
+    for (i=0;i<lengthofselect;i++){
+    if(selectcityList[i].value==inputcity.value){
+        selectcityList[i]=null;
+        break;
+    }
+
+}}
+    </script>
+    <style>
+        table{
+            background-color: rgb(212, 212, 191);
+            padding:2px;
+            border-color: black;
+            border:2px;
+        }
+        tr,td{
+            padding:10px;
+            border:3px;
+
+        }
+    </style>
+</head>
+<body>
+    <form><table>
+        <tr><td>
+        CITY TO ADD:<input type ="text"id="CA"name="CA" onblur="cityadd(this,this.form.city)">
+    </td>
+    </tr>
+    <tr><td>
+        CITY TO REMOVE:<input type="text"id="CR"name="CR"onblur="removeoption(this,this.form.city)">
+    </td>
+    </tr>
+    <tr>
+        <td>CITIES : </td>
+        <td><select name="city"id="city">
+            <option value="BENGALURU"id="bng">BENGALURU</option>
+            <option value="MANGALURU"id="mng">MANGALURU</option>
+            <option value="CHENNAI"id="chn">CHENNAI</option>
+            <option value="PUNE"id="pun">PUNE</option>
+        </select></td>
+    </tr>
+    </table>
+    </form>
+</body>
+</html>

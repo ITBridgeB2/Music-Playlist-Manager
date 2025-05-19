@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    function basic(addloan,selectlist)
+    {
+        var option=new Option(addloan.value,addloan.value)
+            
+         var lengthselect=selectlist.length
+         
+         for(i=0;i<lengthselect;i++){
+         if(selectlist[i].value === addloan.value)
+         {
+              alert("already exists")
+              return;
+              
+         }
+         
+        }
+         
+        selectlist[lengthselect]=option
+        alert(`added successfully`)
+         
+         
+    }
+    </script>
+</head>
+<body>
+    <form>
+    Add Loan Type<input type="text" name="addloantype" id="addloantype" onblur="basic(this,this.form.loan)">
+    <br>
+   Loan Type <select id="loan">
+        <option value="Home">Home</option>
+        <option value="car">car</option>
+        <option value="Personal">Personal</option>
+        <option value="Gold">Gold</option>
+    </select>
+   <br>
+<input type="button" value="loan type nmber" onclick="basic()">
+</form>
+</body>
+</html>

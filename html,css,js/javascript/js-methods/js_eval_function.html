@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link href="calculator.css"type="text/css"
+    rel="stylesheet">
+    <script type="text/javascript">
+    function getvalue(button){
+    let value = button.value;
+    let display=document.getElementById('display')
+    
+    if(value==="="){
+        display.value=eval(value);
+    }
+    else if(value==="CE"){
+        display.value="";
+    }
+    else{
+     display.value +=value;
+    }
+    }
+    
+
+          
+       
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="5"><input class="display" type="text"id="display"placeholder="0"></td>
+        </tr>
+        
+            <tr>
+                <td colspan="4"><input type="button" id="button"name="button" class="button" value="MC" onclick="getvalue(this)">
+                <input type="button" id="button"name="button" class="button" value="MR"onclick="getvalue(this)">
+                <input type="button" id="button"name="button" class="button" value="M+"onclick="getvalue(this)">
+                <input type="button" id="button"name="button" class="button" value="M-"onclick="getvalue(this)">
+                <input type="button" id="button"name="button" class="button" value="MS"onclick="getvalue(this)">
+                <input type="button" id="button"name="button" class="button" value="M"onclick="getvalue(this)"></td>
+            </tr>
+
+           
+        
+        <tr>
+            <td><input type ="button" id="button"name="button" class="button" value="%" onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button" value="CE"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button" value="C"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button1" value="&larr;"onclick="getvalue(this)"></td>
+
+           
+        </tr>
+        <tr>
+            <td><input type ="button" id="button"name="button" class="button" value="1/x"onclick="getvalue(this) "></td>
+            <td><input type ="button" id="button"name="button" class="button" value="x&sup2"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button" value="&radic;x"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button1" value="/"onclick="getvalue(this)"></td>
+
+           
+        </tr>
+        <tr>
+            <td><input type ="button" id="button"name="button" class="button" value="7"onclick="getvalue(this) "></td>
+            <td><input type ="button" id="button"name="button" class="button" value="8"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button" value="9"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button1" value="*"onclick="getvalue(this)"></td>
+
+           
+        </tr>
+        <tr>
+            <td><input type ="button" id="button"name="button" class="button" value="4"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button" value="5"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button" value="6"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button1" value="-"onclick="getvalue(this)"></td>
+           
+        </tr>
+        <tr>
+            <td><input type ="button" id="button"name="button" class="button" value="1"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button" value="2"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button" value="3"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button1" value="+"onclick="getvalue(this)"></td>
+           
+        </tr>
+        <tr>
+            <td><input type ="button" id="button"name="button" class="button" value="+/-"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button" value="0"onclick="getvalue(this)"></td>
+            <td><input type ="button" id="button"name="button" class="button" value="."onclick="getvalue(this)"></td>
+            <td><input style="background-color: rgb(19, 61, 109); color: rgb(255, 255, 255);" type ="button" id="button"name="button" class="button1" value="="onclick="getvalue(this)"></td>
+           
+        </tr>
+    </table>
+</body>
+</html>

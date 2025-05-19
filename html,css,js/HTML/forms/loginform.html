@@ -1,0 +1,118 @@
+login form
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN FORM</title>
+    <style>
+        .login{
+            background-color: rgb(3, 73, 24);
+            color: rgb(230, 233, 237);
+        }
+        .register{
+            background-color:rgb(22, 41, 84);
+            color:aliceblue;
+        }
+        .delete{
+            background-color:rgb(164, 5, 5);
+            color: aliceblue;
+        }
+        .reset{
+            background-color: rgb(7, 71, 71);
+            color:aliceblue;
+            width:90px;
+        }
+    </style>
+</head>
+<body>
+   <form action="sucess.html"><h2 align ="center">login forms</h2>
+    <table cellspacing="10"cellpadding="10"bgcolor="skyblue"align="center">
+        <tr>
+            <td>
+                user name:
+            </td>
+            <td>
+                <input type="text" name="USERNAME" placeholder="USERNAME"required autofocus>
+            </td>
+        </tr>
+<tr>
+    <td>
+        password:
+    </td>
+        <td>
+            <input type="password" name ="passwords" placeholder="PASSWORD"required>
+        </td>
+    </tr>
+<tr>
+    <td>GENDER</td>
+    <td>
+        <input type ="radio" name ="gender" value="male"required>male
+        <input type ="radio" name ="gender" value="female">female
+        <input type ="radio" name ="gender"value="other">other
+        </td>
+    
+</tr>
+<tr>
+    <td>ID</td>
+    <td>
+        <input type="checkbox" name="idproof"value="aadhar card"required>Aadhaar card
+        <input type="checkbox" name="idproof" value="voter id">Voter id
+        <input type="checkbox" name="idproof"value="passorts"required>passport
+    </td>
+</tr>
+<tr>
+    <td>
+        ROLE
+        </td>
+        <td>
+        <select name ="ROLE">
+            <option value="select"disabled selected>----select----</optin>
+            <option value="admin">admin</optin>
+            <option value="employee">employee</optin>
+            <option value="guest">guest</optin>
+        </select>
+    </td>
+    <tr>
+        <td>
+    COMMUNICATION
+    </td>
+    <td>
+        <select name="COMMUNICATION"multiple>
+            <option value="call">call</option>
+            <option value="sms">sms</option>
+            <option value="email">email</option>
+            <option value="post">post</option>
+
+        </select>
+
+
+    </td>
+</tr>
+<tr>
+    <td>comments</td>
+    <td>
+        <textarea cols="20"rows="5"name="comments" placeholder="write anything"></textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <input class="login" type="submit"value="login">
+    </td>
+    <td>
+        <input class="register" type="submit"value="register"formaction="register.html">
+    </td>
+    <td>
+        <input class="delete"type="submit"value="delete"formaction="delete.html">
+    </td>
+    <td>
+        <input type="reset" class="reset">
+    </td>
+    
+</tr>
+
+    </table>
+    </form>
+</body>
+</html>

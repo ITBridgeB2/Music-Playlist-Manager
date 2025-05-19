@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+        let cntr=1001;
+        function ctr(action){
+        
+        
+            if (action === 'increment') {
+                cntr++; 
+            } else if (action === 'decrement') {
+                cntr--; 
+            }
+            document.getElementById("cr").value = cntr;
+            var d = new Date();
+            d.setDate(d.getDate() + 10);
+            document.cookie = "cname=" + escape(cntr) + ";expires=" + d.toGMTString()
+
+        
+
+        }
+        function getCookie(name) {
+            if (document.cookie.length > 0) {
+                
+                let ind = document.cookie.indexOf(name + "=");
+                if (ind != -1) {
+                    ind = ind + name.length + 1;                                                                                                                        
+                    let ind1 = document.cookie.indexOf(";", ind);
+                    if (ind1 == -1) ind1 = document.cookie.length;
+                    return unescape(document.cookie.substring(ind, ind1));
+                } 
+            }
+            return "";
+        }
+
+        function checkCookies() {
+            var ccntr = getCookie('cname');
+            if (ccntr) {
+                cntr = parseInt(ccntr);
+            }
+            document.getElementById("cr").value = cntr;   
+        }
+        
+    </script>
+</head>
+<body onload="checkCookies()">
+    <form>
+        <table>
+            <tr>
+                <td>
+                    
+                    COUNTER:<input type="text"name="cr"id="cr">                </td>
+                    
+
+            </tr>
+            <tr>
+                <td><input type="button"value="increment"name="incr"id="incr"onclick="ctr('increment')"></td>
+                <td><input type ="button"value="decrement"name="decr"id="decr"onclick="ctr('decrement')"><div id="output"></div></td>
+                
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
