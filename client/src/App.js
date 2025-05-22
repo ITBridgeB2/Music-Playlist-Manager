@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import AddSongModalForm from './Components/AddSongForm';
+import { Toaster } from 'react-hot-toast';
+import './index.css';
+
 
 function App() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: '2rem', fontFamily: 'Arial' }}>
+      {/* Toast notifications container */}
+      <Toaster position="top-right" />
+
+      <h1>🎵 Song Manager (Test)</h1>
+      <button onClick={() => setModalOpen(true)}>+ Add Song</button>
+
+      <AddSongModalForm isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 }
