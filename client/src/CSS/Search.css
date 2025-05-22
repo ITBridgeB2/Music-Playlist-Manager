@@ -1,0 +1,55 @@
+/* SongSearch component styles */
+.songsearch-container {
+  background-color: #a855f7; /* Purple 500 */
+  padding: 40px 20px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.songsearch-input {
+  width: 100%;
+  max-width: 500px;
+   padding: 12px 40px 12px 12px; /* padding-right adjusted for icon */
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+ 
+  background-size: 20px;
+  background-color: white;
+  color: #333;
+}
+
+
+.songsearch-results-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  color: #333;
+}
+
+.songsearch-result {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s;
+}
+
+.songsearch-result:last-child {
+  border-bottom: none;
+}
+
+.songsearch-result:hover {
+  background-color: #f3e8ff; /* light purple hover */
+}
+
+.songsearch-genre {
+  color: #6b21a8; /* darker purple for artist name */
+  font-size: 14px;
+}
