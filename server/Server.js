@@ -8,13 +8,13 @@ const cors = require('cors');
 
 
 
-const musicApp = express();
+const app = express();
 
 
 
 // MIDDLEWARE
-musicApp.use(cors());
-musicApp.use(express.json());
+app.use(cors());
+app.use(express.json());
 
 // MySQL connection using .env
 const db = mysql.createConnection({
@@ -31,7 +31,7 @@ const db = mysql.createConnection({
 
 
   // GET /songs/:id - Get a single song by ID
-musicApp.get('/songs/:id', (req, res) => {
+app.get('/songs/:id', (req, res) => {
   const songId = req.params.id;
 
   const query = 'SELECT * FROM songs WHERE id = ?';
@@ -50,7 +50,7 @@ musicApp.get('/songs/:id', (req, res) => {
 });
 
 // DELETE /songs/:id - Delete a song by ID
-musicApp.delete('/songs/:id', (req, res) => {
+app.delete('/songs/:id', (req, res) => {
   const songId = req.params.id;
 
   const query = 'DELETE FROM songs WHERE id = ?';
@@ -68,10 +68,54 @@ musicApp.delete('/songs/:id', (req, res) => {
   });
 });
 
+// PUT /songs/:id - Update a song by ID
+app.put('/songs/:id', (req, res) => {
+  const { id } = req.params;
+  const { title, artist, genre, duration } = req.body;
+
+  // Check if all required fields are present and valid
+  if (!title || !artist || !genre || !duration || duration <= 0) {
+    return res.status(400).json({ error: 'Please provide valid title, artist, genre and duration' });
+  }
+
+  // First check if song exists
+  const checkQuery = 'SELECT * FROM songs WHERE id = ?';
+  db.query(checkQuery, [id], (err, results) => {
+    if (err) {
+      console.error('Error checking song existence:', err);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+    if (results.length === 0) {
+      return res.status(404).json({ error: 'Song not found' });
+    }
+
+    // Update the song
+    const updateQuery = 'UPDATE songs SET title = ?, artist = ?, genre = ?, duration = ? WHERE id = ?';
+    db.query(updateQuery, [title, artist, genre, duration, id], (err, updateResult) => {
+      if (err) {
+        console.error('Error updating song:', err);
+        return res.status(500).json({ error: 'Internal Server Error' });
+      }
+
+      // Return the updated song details
+      db.query(checkQuery, [id], (err, updatedResults) => {
+        if (err) {
+          console.error('Error fetching updated song:', err);
+          return res.status(500).json({ error: 'Internal Server Error' });
+        }
+
+        res.json(updatedResults[0]);
+      });
+    });
+  });
+});
+
+
 
 
 
 
 
    const PORT = process.env.PORT;
-musicApp.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
