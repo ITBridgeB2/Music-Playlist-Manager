@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
+import HomePageComponent from "./Pages/HomePage"
+import EditDeleteForm from './Components/EditDeleteForm';
+import SongDetails from './Pages/SongDetails';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+     <Routes>
+      <Route path="/" element={<HomePageComponent/>}></Route>
+       <Route path="/songs/:id" element={<SongDetails />} />
+        <Route path="/edit/:id" element={<EditDeleteForm />} />
+     </Routes>
+     </Router>
     </div>
   );
 }
-
 export default App;
