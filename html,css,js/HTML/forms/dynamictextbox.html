@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function DynamicallyAdd(){
+            var ccount=document.getElementById('childCount').value;
+            var childcount=Number(ccount)
+            var myform = document.getElementById('myform');
+            var inputchild = document.getElementById('inputchild')
+            inputchild.innerHTML='';
+            for( i=1;i<=childcount;i++){
+                var inputText=document.createElement('input');
+                inputText.type="text";
+                inputText.id="child"+i;
+                inputText.style.display = "block";
+                inputchild.append(inputText);
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <div id ="myform">ENTER CHILDRENS NAME
+        child count : <input type="text"id="childCount"><br/>
+        <input type="button"value="dynamic add" onclick="DynamicallyAdd()"   > 
+    <div id="inputchild" ></div></div>
+</body>
+</html>

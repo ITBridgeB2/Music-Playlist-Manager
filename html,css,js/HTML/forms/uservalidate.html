@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Validate(){
+            var uname = document.getElementById('name').value
+            var msg = document.getElementById('msg')
+            if(uname.length<5){
+               msg.innerHTML="<font color =red> name should be of atleast 5 characters" 
+            }
+            else{
+                msg.innerHTML="<font color=green> user name valid"
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text"placeholder="username" id="name" onblur="Validate()"><span id="msg"></span>
+</body>
+</html>

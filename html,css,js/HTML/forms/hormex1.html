@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    
+    <form action="submit.html">
+        <h1>
+            Login form:
+        </h1>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        GENDER:
+                    </td>
+                </tr>
+                </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            Male:<input type="radio" value="male" name="gender">
+                            Female:<input type="radio"value="female"name="gender">
+                            others<input type="radio" value="others" name="gender" required>
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            visiting purpose
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="purpose">
+                                <option value=""selected>----select----</option>
+                                <option value="Gardener">Gardener</option>
+                                <option value="Guest">Guest</option>
+                                <option value="Police-investigation">Police-investigation</option>
+                                <option value="Delivery">delivery</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Communication:
+                        </td>
+                    <tr>
+                        <td>
+                            <select name="contact mode" multiple>
+                                <option value="sms">sms</option>
+                                <option value="call">call</option>
+                                <option value="letter">letter</option>
+                                <option value="mail">mail</option>
+                            </select>
+                        </td>
+                    </tr>
+                   <tr>
+                    <td>Select your favourite food</td>
+                   </tr>
+                   <tr>
+                    <td>
+                       oatmeal:<input type="checkbox"name="favfood"value="oatmeal"id="oatmeal">
+                       chicken biriyani:<input type="checkbox"name="favfood"value="oatmeal"id="chicken biriyani">
+                       grilled honey chicken:<input type="checkbox"name="favfood"value="oatmeal"id="grilled honey chicken">
+                       pineapple soffle:<input type="checkbox"name="favfood"value="oatmeal"id="pineapple souffle">
+                    </td>
+                   </tr>
+                   <tr>
+                    <td>
+                       comments: <textarea>
+
+                        </textarea>
+                    </td>
+                   </tr>
+                
+                <tr><td><input class="login"type="submit" value="Login"></td></tr>
+            </tbody>
+
+            
+        </table>
+    </form>
+</body>
+</html>
